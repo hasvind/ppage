@@ -81,6 +81,8 @@
   }
   label.check .txt{font-size:13.1px;}
   label.check .note{color:var(--ink-faint);font-size:11.4px;}
+  label.check .lbl{display:flex;flex-direction:column;}
+  label.check .gloss{font-size:11px;line-height:1.3;color:var(--ink-faint);margin-top:2px;}
 
   /* segmented 0-3 */
   .seg-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);}
@@ -172,24 +174,24 @@
 
       <div class="group-label">Intervju — smertens karakter</div>
       <div data-section="interview">
-        <label class="check"><input type="checkbox" data-dn4="i"><span class="txt">Brennende</span></label>
-        <label class="check"><input type="checkbox" data-dn4="i"><span class="txt">Smertefull kulde</span></label>
-        <label class="check"><input type="checkbox" data-dn4="i"><span class="txt">Elektriske støt</span></label>
+        <label class="check"><input type="checkbox" data-dn4="i"><span class="lbl"><span class="txt">Brennende</span><span class="gloss">Burning pain · Brûlures [brennende]</span></span></label>
+        <label class="check"><input type="checkbox" data-dn4="i"><span class="lbl"><span class="txt">Isende</span><span class="gloss">Painful cold · Sensation de froid douloureux [smertefull kuldefølelse]</span></span></label>
+        <label class="check"><input type="checkbox" data-dn4="i"><span class="lbl"><span class="txt">Elektriske støt</span><span class="gloss">Electric shocks · Décharges électriques [elektriske utladninger]</span></span></label>
       </div>
 
       <div class="group-label">Intervju — ledsagende fornemmelser</div>
       <div data-section="interview">
-        <label class="check"><input type="checkbox" data-dn4="i"><span class="txt">Prikking</span></label>
-        <label class="check"><input type="checkbox" data-dn4="i"><span class="txt">Maurkryping</span></label>
-        <label class="check"><input type="checkbox" data-dn4="i"><span class="txt">Nummenhet</span></label>
-        <label class="check"><input type="checkbox" data-dn4="i"><span class="txt">Kløe</span></label>
+        <label class="check"><input type="checkbox" data-dn4="i"><span class="lbl"><span class="txt">Kribling</span><span class="gloss">Tingling · Fourmillements [maurkryping]</span></span></label>
+        <label class="check"><input type="checkbox" data-dn4="i"><span class="lbl"><span class="txt">Stikking/prikking</span><span class="gloss">Pins and needles · Picotements [små stikk]</span></span></label>
+        <label class="check"><input type="checkbox" data-dn4="i"><span class="lbl"><span class="txt">Nummenhet</span><span class="gloss">Numbness · Engourdissements [nummenhet]</span></span></label>
+        <label class="check"><input type="checkbox" data-dn4="i"><span class="lbl"><span class="txt">Kløe</span><span class="gloss">Itching · Démangeaisons [kløe]</span></span></label>
       </div>
 
       <div class="group-label">Undersøkelse — i det smertefulle området</div>
       <div data-section="exam">
-        <label class="check"><input type="checkbox" data-dn4="e"><span class="txt">Nedsatt berøringssans</span></label>
-        <label class="check"><input type="checkbox" data-dn4="e"><span class="txt">Nedsatt stikksans (nålestikk)</span></label>
-        <label class="check"><input type="checkbox" data-dn4="e"><span class="txt">Allodyni ved børsting</span></label>
+        <label class="check"><input type="checkbox" data-dn4="e"><span class="lbl"><span class="txt">Hypoestesi ved berøring</span><span class="gloss">Hypoesthesia to touch · Hypoesthésie au tact [nedsatt følelse ved berøring]</span></span></label>
+        <label class="check"><input type="checkbox" data-dn4="e"><span class="lbl"><span class="txt">Hypoestesi ved stikk</span><span class="gloss">Hypoesthesia to pinprick · Hypoesthésie à la piqûre [nedsatt følelse ved stikk]</span></span></label>
+        <label class="check"><input type="checkbox" data-dn4="e"><span class="lbl"><span class="txt">Strykende berøring</span><span class="gloss">Brushing · Frottement [gniding]</span></span></label>
       </div>
 
       <div class="result" id="dn4-result">
@@ -205,38 +207,6 @@
         <div class="body">
           <p>Full 10-item cutoff is ≥4/10. The 7-item interview-only variant (DN4-i, no examination) is commonly used with a cutoff of ≥3/7 — shown above as a subtotal.</p>
           <p>A screen, not a diagnosis: reported sensitivity roughly 75–98% and specificity roughly 37–96% across populations; weaker for trigeminal neuralgia. Confirm against the IASP grading of neuropathic pain (history compatible with a lesion/disease of the somatosensory system; pain in a neuroanatomically plausible distribution; confirmatory test).</p>
-        </div>
-      </details>
-    </div>
-
-    <div class="card" id="neup">
-      <h2>NeuPSIG grading</h2>
-
-      <div class="group-label">History</div>
-      <div>
-        <label class="check"><input type="checkbox" data-neup="hist"><span class="txt">History of a relevant lesion or disease of the somatosensory system</span></label>
-        <label class="check"><input type="checkbox" data-neup="dist"><span class="txt">Pain in a neuroanatomically plausible distribution</span></label>
-      </div>
-
-      <div class="group-label">Confirmation</div>
-      <div>
-        <label class="check"><input type="checkbox" data-neup="signs"><span class="txt">Confirmatory sensory signs in the painful area on examination</span></label>
-        <label class="check"><input type="checkbox" data-neup="test"><span class="txt">Diagnostic test confirming the lesion or disease</span></label>
-      </div>
-
-      <div class="result" id="neup-result">
-        <p class="score" id="neup-grade">Not graded</p>
-        <p class="detail" id="neup-detail">Needs a compatible history and a plausible pain distribution.</p>
-      </div>
-
-      <div class="actions"><button class="btn-reset" data-reset="neup">Reset</button></div>
-
-      <details class="caveat">
-        <summary>Notes &amp; caveats</summary>
-        <div class="body">
-          <p>Possible needs both history items. Probable adds confirmatory sensory signs on examination — or, where signs cannot be shown, a test confirming the lesion. Definite needs both the sensory signs and a confirming test.</p>
-          <p>Sensory loss is generally required, but touch-evoked or thermal allodynia, trigger phenomena in trigeminal neuralgia, or the missing part in phantom pain may count as signs. Surgical or anatomical verification of a nerve lesion counts as a confirmatory test.</p>
-          <p>Probable usually suffices to start treatment under neuropathic pain guidelines. Even Definite confirms only that a lesion can explain the pain — it does not establish causality. Finnerup et al., Pain 2016.</p>
         </div>
       </details>
     </div>
@@ -1107,6 +1077,12 @@
         <button class="ddg-go ddg-ai" data-mode="ai">AI</button>
       </div>
     </div>
+    <div class="card searchcard">
+      <input id="fk-q" class="ddg-input" type="text" placeholder="Søk Felleskatalogen" aria-label="Søk Felleskatalogen">
+      <div class="ddg-btns">
+        <button class="ddg-go" id="fk-go">Søk</button>
+      </div>
+    </div>
     <div class="card">
       <a class="linkrow" href="https://www.nrk.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">NRK</span><span class="lr-host">nrk.no ›</span></a>
       <a class="linkrow" href="https://klassekampen.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">Klassekampen</span><span class="lr-host">klassekampen.no ›</span></a>
@@ -1115,6 +1091,39 @@
       <a class="linkrow" href="https://www.felleskatalogen.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">Felleskatalogen</span><span class="lr-host">felleskatalogen.no ›</span></a>
       <a class="linkrow" href="https://f-b.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">f-b.no</span><span class="lr-host">›</span></a>
     </div>
+
+    <div class="card" id="neup">
+      <h2>NeuPSIG grading</h2>
+
+      <div class="group-label">History</div>
+      <div>
+        <label class="check"><input type="checkbox" data-neup="hist"><span class="txt">History of a relevant lesion or disease of the somatosensory system</span></label>
+        <label class="check"><input type="checkbox" data-neup="dist"><span class="txt">Pain in a neuroanatomically plausible distribution</span></label>
+      </div>
+
+      <div class="group-label">Confirmation</div>
+      <div>
+        <label class="check"><input type="checkbox" data-neup="signs"><span class="txt">Confirmatory sensory signs in the painful area on examination</span></label>
+        <label class="check"><input type="checkbox" data-neup="test"><span class="txt">Diagnostic test confirming the lesion or disease</span></label>
+      </div>
+
+      <div class="result" id="neup-result">
+        <p class="score" id="neup-grade">Not graded</p>
+        <p class="detail" id="neup-detail">Needs a compatible history and a plausible pain distribution.</p>
+      </div>
+
+      <div class="actions"><button class="btn-reset" data-reset="neup">Reset</button></div>
+
+      <details class="caveat">
+        <summary>Notes &amp; caveats</summary>
+        <div class="body">
+          <p>Possible needs both history items. Probable adds confirmatory sensory signs on examination — or, where signs cannot be shown, a test confirming the lesion. Definite needs both the sensory signs and a confirming test.</p>
+          <p>Sensory loss is generally required, but touch-evoked or thermal allodynia, trigger phenomena in trigeminal neuralgia, or the missing part in phantom pain may count as signs. Surgical or anatomical verification of a nerve lesion counts as a confirmatory test.</p>
+          <p>Probable usually suffices to start treatment under neuropathic pain guidelines. Even Definite confirms only that a lesion can explain the pain — it does not establish causality. Finnerup et al., Pain 2016.</p>
+        </div>
+      </details>
+    </div>
+
   </section>
   </div>
 
@@ -1382,6 +1391,19 @@
       b.addEventListener("click", function(){ go(b.dataset.mode); });
     });
     input.addEventListener("keydown", function(e){ if(e.key==="Enter") go("web"); });
+  })();
+
+  /* ---------- Felleskatalogen search ---------- */
+  (function(){
+    var fk = document.getElementById("fk-q");
+    if(!fk) return;
+    function go(){
+      var q = fk.value.trim();
+      if(!q) return;
+      window.open("https://www.felleskatalogen.no/medisin/sok?sokord=" + encodeURIComponent(q), "_blank", "noopener");
+    }
+    document.getElementById("fk-go").addEventListener("click", go);
+    fk.addEventListener("keydown", function(e){ if(e.key==="Enter") go(); });
   })();
 
   /* ---------- init ---------- */
