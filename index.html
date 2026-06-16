@@ -53,7 +53,7 @@
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;margin-top:8px;}
   #dn4{grid-column:1;grid-row:1;}
   #links{grid-column:2;grid-row:1;}
-  #fms{grid-column:3;grid-row:1 / span 2;}
+  #fms{grid-column:3;grid-row:1;}
   #bedside{grid-column:1 / span 2;grid-row:2;}
   @media (max-width:980px){
     .grid{grid-template-columns:1fr;}
@@ -175,6 +175,12 @@
   .ref td.fib{color:var(--accent-deep);font-weight:600;white-space:nowrap;}
   .ref .reffoot{font-size:11px;color:var(--ink-faint);margin:10px 0 0;}
 
+  #nocip .frame{font-size:12px;line-height:1.45;color:var(--ink-soft);margin:0 0 6px;}
+  #nocip .subhead,#defs .subhead{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin:16px 0 8px;}
+  #nocip .mech,#defs .mech{font-size:12px;line-height:1.45;margin:0 0 9px;color:var(--ink-soft);}
+  #nocip .mech b,#nocip .featgrp b,#defs .mech b{color:var(--ink);}
+  #nocip .featgrp{font-size:12px;line-height:1.45;margin:0 0 9px;color:var(--ink-soft);}
+
   footer{margin-top:40px;max-width:80ch;font-size:10.9px;color:var(--ink-faint);line-height:1.6;border-top:1px solid var(--line);padding-top:18px;}
   footer b{color:var(--ink-soft);font-weight:600;}
 </style>
@@ -228,8 +234,114 @@
         </div>
       </details>
     </div>
+
+    <div class="card" id="defs">
+      <h2>Pain definitions</h2>
+      <p class="sub">IASP terminology</p>
+      <p class="mech"><b>Pain</b> &mdash; an unpleasant sensory and emotional experience associated with, or resembling that associated with, actual or potential tissue damage.</p>
+      <details class="caveat">
+        <summary>The six notes</summary>
+        <div class="body">
+          <p>Pain is always a personal experience, influenced to varying degrees by biological, psychological and social factors.</p>
+          <p>Pain and nociception are different phenomena; pain cannot be inferred solely from activity in sensory neurons.</p>
+          <p>Through their life experiences, individuals learn the concept of pain.</p>
+          <p>A person&rsquo;s report of an experience as pain should be respected.</p>
+          <p>Although pain usually serves an adaptive role, it may have adverse effects on function and on social and psychological well-being.</p>
+          <p>Verbal description is only one of several behaviours to express pain; inability to communicate does not negate the possibility that a human or a non-human animal experiences pain.</p>
+        </div>
+      </details>
+      <div class="subhead">Mechanistic descriptors</div>
+      <p class="mech"><b>Nociceptive</b> &mdash; pain that arises from actual or threatened damage to non-neural tissue and is due to the activation of nociceptors.</p>
+      <p class="mech"><b>Neuropathic</b> &mdash; pain caused by a lesion or disease of the somatosensory nervous system.</p>
+      <p class="mech"><b>Nociplastic</b> &mdash; pain that arises from altered nociception despite no clear evidence of actual or threatened tissue damage causing the activation of peripheral nociceptors, or evidence for disease or lesion of the somatosensory system causing the pain.</p>
+      <details class="caveat">
+        <summary>Note</summary>
+        <div class="body">
+          <p>Current IASP terminology: the definition of pain and its notes were revised in 2020; &ldquo;nociplastic&rdquo; was adopted in 2017. The term&rsquo;s authors later noted that &ldquo;altered nociceptive function&rdquo; would have been more precise than &ldquo;altered nociception&rdquo;.</p>
+        </div>
+      </details>
+    </div>
   </section>
 
+
+  <!-- ===================== LINKS ===================== -->
+  <section class="tool" id="links">
+    <div class="card searchcard">
+      <input id="ddg-q" class="ddg-input" type="text" placeholder="Search DuckDuckGo" aria-label="Search DuckDuckGo">
+      <div class="ddg-btns">
+        <button class="ddg-go" data-mode="web">Search</button>
+        <button class="ddg-go ddg-ai" data-mode="ai">AI</button>
+      </div>
+    </div>
+    <div class="card searchcard">
+      <input id="fk-q" class="ddg-input" type="text" placeholder="Søk Felleskatalogen" aria-label="Søk Felleskatalogen">
+      <div class="ddg-btns">
+        <button class="ddg-go" id="fk-go">Søk</button>
+      </div>
+    </div>
+    <div class="card">
+      <a class="linkrow" href="https://www.nrk.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">NRK</span><span class="lr-host">nrk.no ›</span></a>
+      <a class="linkrow" href="https://klassekampen.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">Klassekampen</span><span class="lr-host">klassekampen.no ›</span></a>
+      <a class="linkrow" href="https://www.theguardian.com" target="_blank" rel="noopener noreferrer"><span class="lr-name">The Guardian</span><span class="lr-host">theguardian.com ›</span></a>
+      <a class="linkrow" href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer"><span class="lr-name">PubMed</span><span class="lr-host">pubmed.ncbi.nlm.nih.gov ›</span></a>
+      <a class="linkrow" href="https://www.felleskatalogen.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">Felleskatalogen</span><span class="lr-host">felleskatalogen.no ›</span></a>
+      <a class="linkrow" href="https://f-b.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">f-b.no</span><span class="lr-host">›</span></a>
+    </div>
+
+    <div class="card" id="neup">
+      <h2>NeuPSIG grading</h2>
+
+      <div class="group-label">History</div>
+      <div>
+        <label class="check"><input type="checkbox" data-neup="hist"><span class="lbl"><span class="txt">History of a relevant lesion or disease of the somatosensory system</span><span class="gloss">Pain attributable to it, not to inflammation or non-neural tissue damage; temporal/spatial relationship (incl. paroxysmal trigeminal neuralgia)</span></span></label>
+        <label class="check"><input type="checkbox" data-neup="dist"><span class="txt">Pain in a neuroanatomically plausible distribution</span></label>
+      </div>
+
+      <div class="group-label">Confirmation</div>
+      <div>
+        <label class="check"><input type="checkbox" data-neup="signs"><span class="txt">Confirmatory sensory signs in the painful area on examination</span></label>
+        <label class="check"><input type="checkbox" data-neup="test"><span class="txt">Diagnostic test confirming the lesion or disease</span></label>
+      </div>
+
+      <div class="result" id="neup-result">
+        <p class="score" id="neup-grade">Not graded</p>
+        <p class="detail" id="neup-detail">Needs a compatible history and a plausible pain distribution.</p>
+      </div>
+
+      <div class="actions"><button class="btn-reset" data-reset="neup">Reset</button></div>
+
+      <details class="caveat">
+        <summary>Notes &amp; caveats</summary>
+        <div class="body">
+          <p>Possible needs both history items. Probable adds confirmatory sensory signs on examination — or, where signs cannot be shown, a test confirming the lesion. Definite needs both the sensory signs and a confirming test.</p>
+          <p>Sensory loss is generally required, but touch-evoked or thermal allodynia, trigger phenomena in trigeminal neuralgia, or the missing part in phantom pain may count as signs. Surgical or anatomical verification of a nerve lesion counts as a confirmatory test.</p>
+          <p>Probable usually suffices to start treatment under neuropathic pain guidelines. Even Definite confirms only that a lesion can explain the pain — it does not establish causality. Finnerup et al., Pain 2016.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" id="nocip">
+      <h2>Nociplastic pain</h2>
+      <p class="sub">Reference &mdash; not a score</p>
+      <p class="frame">A judgement about the <b>dominant mechanism</b>, not a diagnosis with a validated measure. Considered when pain persists &ge;3 months and is more widespread, more disproportionate, or more easily provoked than nociceptive or neuropathic mechanisms explain.</p>
+
+      <div class="subhead">Nociplastic features</div>
+      <p class="featgrp"><b>Distribution</b> &mdash; regional or widespread, beyond what a single source explains (treated as near-obligatory).</p>
+      <p class="featgrp"><b>Evoked hypersensitivity</b> &mdash; pain to light touch (clothing, bedsheets), to deep pressure (massage), to heat or cold; painful aftersensations outlasting the stimulus.</p>
+      <p class="featgrp"><b>Comorbidities (non-specific)</b> &mdash; sleep disturbance with night waking, fatigue, cognitive fog, sensitivity to sound/light/odour.</p>
+
+      <details class="caveat">
+        <summary>Notes &amp; caveats</summary>
+        <div class="body">
+          <p>No gold standard exists. Hodges et al. (2025) offer a tool to <i>discriminate</i> between types, not to diagnose one; it is validated only against experienced-clinician judgement and remains preliminary &mdash; no agreed feature weighting or psychometrics, and no evidence yet that matching treatment to the identified type improves outcomes.</p>
+          <p>Mechanisms coexist; the question is which predominates, not which one. Identifiable nociceptive or neuropathic pathology does not exclude a nociplastic contribution.</p>
+          <p>The comorbidity cluster is non-specific &mdash; present across all three types and among the weakest discriminators in Hodges. It supports the picture but cannot carry it.</p>
+          <p>The reasoning is as much rule-out as rule-in: chronicity (&ge;3 months) plus pain not fully explained by nociceptive or neuropathic mechanisms. IASP 2017; Kosek et al., <i>Pain</i> 2021; Hodges et al., <i>Clin J Pain</i> 2025.</p>
+        </div>
+      </details>
+    </div>
+
+  </section>
   <!-- ===================== FMS 2016 ===================== -->
   <section class="tool" id="fms">
 
@@ -1088,63 +1200,6 @@
     </div>
   </section>
 
-  <!-- ===================== LINKS ===================== -->
-  <section class="tool" id="links">
-    <div class="card searchcard">
-      <input id="ddg-q" class="ddg-input" type="text" placeholder="Search DuckDuckGo" aria-label="Search DuckDuckGo">
-      <div class="ddg-btns">
-        <button class="ddg-go" data-mode="web">Search</button>
-        <button class="ddg-go ddg-ai" data-mode="ai">AI</button>
-      </div>
-    </div>
-    <div class="card searchcard">
-      <input id="fk-q" class="ddg-input" type="text" placeholder="Søk Felleskatalogen" aria-label="Søk Felleskatalogen">
-      <div class="ddg-btns">
-        <button class="ddg-go" id="fk-go">Søk</button>
-      </div>
-    </div>
-    <div class="card">
-      <a class="linkrow" href="https://www.nrk.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">NRK</span><span class="lr-host">nrk.no ›</span></a>
-      <a class="linkrow" href="https://klassekampen.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">Klassekampen</span><span class="lr-host">klassekampen.no ›</span></a>
-      <a class="linkrow" href="https://www.theguardian.com" target="_blank" rel="noopener noreferrer"><span class="lr-name">The Guardian</span><span class="lr-host">theguardian.com ›</span></a>
-      <a class="linkrow" href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer"><span class="lr-name">PubMed</span><span class="lr-host">pubmed.ncbi.nlm.nih.gov ›</span></a>
-      <a class="linkrow" href="https://www.felleskatalogen.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">Felleskatalogen</span><span class="lr-host">felleskatalogen.no ›</span></a>
-      <a class="linkrow" href="https://f-b.no" target="_blank" rel="noopener noreferrer"><span class="lr-name">f-b.no</span><span class="lr-host">›</span></a>
-    </div>
-
-    <div class="card" id="neup">
-      <h2>NeuPSIG grading</h2>
-
-      <div class="group-label">History</div>
-      <div>
-        <label class="check"><input type="checkbox" data-neup="hist"><span class="lbl"><span class="txt">History of a relevant lesion or disease of the somatosensory system</span><span class="gloss">Pain attributable to it, not to inflammation or non-neural tissue damage; temporal/spatial relationship (incl. paroxysmal trigeminal neuralgia)</span></span></label>
-        <label class="check"><input type="checkbox" data-neup="dist"><span class="txt">Pain in a neuroanatomically plausible distribution</span></label>
-      </div>
-
-      <div class="group-label">Confirmation</div>
-      <div>
-        <label class="check"><input type="checkbox" data-neup="signs"><span class="txt">Confirmatory sensory signs in the painful area on examination</span></label>
-        <label class="check"><input type="checkbox" data-neup="test"><span class="txt">Diagnostic test confirming the lesion or disease</span></label>
-      </div>
-
-      <div class="result" id="neup-result">
-        <p class="score" id="neup-grade">Not graded</p>
-        <p class="detail" id="neup-detail">Needs a compatible history and a plausible pain distribution.</p>
-      </div>
-
-      <div class="actions"><button class="btn-reset" data-reset="neup">Reset</button></div>
-
-      <details class="caveat">
-        <summary>Notes &amp; caveats</summary>
-        <div class="body">
-          <p>Possible needs both history items. Probable adds confirmatory sensory signs on examination — or, where signs cannot be shown, a test confirming the lesion. Definite needs both the sensory signs and a confirming test.</p>
-          <p>Sensory loss is generally required, but touch-evoked or thermal allodynia, trigger phenomena in trigeminal neuralgia, or the missing part in phantom pain may count as signs. Surgical or anatomical verification of a nerve lesion counts as a confirmatory test.</p>
-          <p>Probable usually suffices to start treatment under neuropathic pain guidelines. Even Definite confirms only that a lesion can explain the pain — it does not establish causality. Finnerup et al., Pain 2016.</p>
-        </div>
-      </details>
-    </div>
-
-  </section>
   <!-- ===================== BEDSIDE SENSORY EXAM ===================== -->
   <section class="tool ref" id="bedside">
     <div class="card">
@@ -1198,6 +1253,7 @@
       </details>
     </div>
   </section>
+
   </div>
 
   <footer>
